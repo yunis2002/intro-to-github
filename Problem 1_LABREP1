@@ -34,3 +34,8 @@ def MEDIAN(x):
         return MEDIAN
     
 
+#Vince's Part
+print("Data = ", data)
+print("MEAN", MEAN(data))
+print("MEDIAN", MEDIAN(data))
+print("MODE", MODE(data))
