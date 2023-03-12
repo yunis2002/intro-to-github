@@ -19,3 +19,14 @@ def MEAN(data):
         sum = sum + i
         MEAN = sum/n
     return MEAN
+
+#Dominic's Part 
+def MODE(data):
+    MODE = []
+    data1 = Counter(data) 
+    temp = data1.most_common(1)[0][1] 
+    for ele in data:
+        if (data.count(ele) == temp):
+            MODE.append(ele)
+    MODE = list(set(MODE))
+    return str(MODE)
