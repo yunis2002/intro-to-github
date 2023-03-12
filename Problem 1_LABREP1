@@ -20,28 +20,4 @@ def MEAN(data):
         MEAN = sum/n
     return MEAN
     
-  
-#Alexa's Part 
-  def MEDIAN(x):
-    data.sort()
-    n = len(data)
-    midnum = int(n/2)
-    
-    if(n%2 == 1):
-        MEDIAN = data[midnum]
-        return MEDIAN
-    else:
-        MEDIAN = (data[midnum]+data[midnum+1])/2
-        return MEDIAN
 
-
-#Dominic's Part 
-def MODE(data):
-    MODE = []
-    data1 = Counter(data) 
-    temp = data1.most_common(1)[0][1] 
-    for ele in data:
-        if (data.count(ele) == temp):
-            MODE.append(ele)
-    MODE = list(set(MODE))
-    return str(MODE)
