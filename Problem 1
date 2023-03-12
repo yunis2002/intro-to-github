@@ -1,9 +1,9 @@
-# Statisticians would like to have a set of functions to compute the median and mode of a list of numbers. 
-# The median is the number that would appear at the midpoint of a list if it were sorted. 
-# The mode is the number that appears most frequently in the list. 
-# Define these functions in a module named stats.py. 
-# Also include a function named mean, which computes the average of a set of numbers. 
-# Each function expects a list of numbers as an argument and returns a single number.
+Statisticians would like to have a set of functions to compute the median and mode of a list of numbers. 
+The median is the number that would appear at the midpoint of a list if it were sorted. 
+The mode is the number that appears most frequently in the list. 
+Define these functions in a module named stats.py. 
+Also include a function named mean, which computes the average of a set of numbers. 
+Each function expects a list of numbers as an argument and returns a single number.
 
 import math
 import stats
@@ -19,3 +19,15 @@ def MEAN(data):
         sum = sum + i
         MEAN = sum/n
     return MEAN
+    
+    def MEDIAN(x):
+    data.sort()
+    n = len(data)
+    midnum = int(n/2)
+    
+    if(n%2 == 1):
+        MEDIAN = data[midnum]
+        return MEDIAN
+    else:
+        MEDIAN = (data[midnum]+data[midnum+1])/2
+        return MEDIAN
