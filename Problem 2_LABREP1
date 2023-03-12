@@ -4,3 +4,19 @@
 # Actual line numbers range from 1 to the number of lines in the file. 
 # If the input is 0, the program quits. Otherwise, the program prints the line associated with that number.
 
+ #Quennie's Part
+def print_file_lines(filename):
+    with open(filename, "r") as file:
+        
+        lines = file.readlines()
+        
+    print("This file has {} lines.".format(len(lines)))
+    
+    
+    while True:
+        line_num = input("Enter a line number (0 to quit): ")
+
+        line_num = int(line_num)
+
+        if line_num == 0:
+            break
