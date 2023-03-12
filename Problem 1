@@ -5,3 +5,17 @@ Define these functions in a module named stats.py.
 Also include a function named mean, which computes the average of a set of numbers. 
 Each function expects a list of numbers as an argument and returns a single number.
 
+import math
+import stats
+from collections import Counter
+
+data = [12, 43,23, 55, 765,54, 234, 243, 34,34,34,34,12,12,12 ,546, 100, 465,65, 123, 786]
+
+def MEAN(data):
+    n = len(data)
+    sum = 0
+
+    for i in data:
+        sum = sum + i
+        MEAN = sum/n
+    return MEAN
