@@ -19,3 +19,15 @@ def MEAN(data):
         sum = sum + i
         MEAN = sum/n
     return MEAN
+
+def MEDIAN(x):
+    data.sort()
+    n = len(data)
+    midnum = int(n/2)
+    
+    if(n%2 == 1):
+        MEDIAN = data[midnum]
+        return MEDIAN
+    else:
+        MEDIAN = (data[midnum]+data[midnum+1])/2
+        return MEDIAN
