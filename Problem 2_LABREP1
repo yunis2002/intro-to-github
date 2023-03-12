@@ -20,3 +20,15 @@ def print_file_lines(filename):
 
         if line_num == 0:
             break
+    
+   #Jan Vincent's Part
+        if line_num < 1 or line_num > len(lines):
+            print("Invalid line number. Please enter a number between 1 and {}.".format(len(lines)))
+            continue
+
+        print("Line {}: {}".format(line_num, lines[line_num - 1]))
+
+filename = input("Enter a filename: ")
+
+print_file_lines(filename)
+     
