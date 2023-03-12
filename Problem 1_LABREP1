@@ -33,7 +33,17 @@ def MEDIAN(x):
         MEDIAN = (data[midnum]+data[midnum+1])/2
         return MEDIAN
     
-
+#Dominic's Part
+def MODE(data):
+    MODE = []
+    data1 = Counter(data) 
+    temp = data1.most_common(1)[0][1] 
+    for ele in data:
+        if (data.count(ele) == temp):
+            MODE.append(ele)
+    MODE = list(set(MODE))
+    return str(MODE)
+    
 #Vince's Part
 print("Data = ", data)
 print("MEAN", MEAN(data))
