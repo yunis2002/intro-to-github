@@ -4,3 +4,58 @@
 # In each case, the method returns the result of the comparison of the two students’ names. 
 # Include a main function that tests all of the comparison operators.
 
+class Student(object):
+    def __init__(self, name, number):
+        self.name = name
+        self.scores = [0] * number  # simpler way to create a list of zeros
+
+    def getName(self):
+        return self.name
+
+    def setScore(self, i, score):
+        self.scores[i-1] = score
+
+    def getScore(self, i):
+        return self.scores[i-1]
+
+    def getAverage(self):
+        return sum(self.scores) / len(self.scores)
+
+    def getHighScore(self):
+        return max(self.scores)
+
+    def __str__(self):
+        return f"Name: {self.name}\nScores: {' '.join(map(str, self.scores))}"  # use f-strings for formatting
+
+    def isEqual(self, other):
+        return self.name == other.name
+
+    def isLessThan(self, other):
+        return self.name < other.name
+
+    def isGOE(self, other):
+        return self.name >= other.name
+
+
+def main():
+    student = Student("Ken", 5)
+    for i in range(1, 6):
+        student.setScore(i, 100)
+
+    student2 = Student("Ayan", 5)
+    for i in range(1, 6):
+        student2.setScore(i, 100)
+    print(student)
+    print(student2)
+    print("Is student = student2?")
+    print(student == student2)  # should print False
+    print("Is student < student2?")
+    print(student < student2)   # should print True
+    print("Is student2 < student?")
+    print(student2 < student)# should print False
+    print("Is student >= student2?")
+    print(student >= student2)  # should print True
+
+
+if __name__ == "_main_":
+    main()
