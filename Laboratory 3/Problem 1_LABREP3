@@ -43,7 +43,32 @@ def main():
     for i in range(1, 6):
         student.setScore(i, 100)
     print(student)
+ for i in range(1, 6):
+        student1.setScore(i, 100)
 
+    student2 = Student("Ayan", 5)
+    print(f"Student #2: {student2.getName()}")
+
+    for i in range(1, 6): #Torralba
+        student2.setScore(i, 100)
+
+    print("Is student1 = Student2?")
+    print(student1 == student2)
+
+    print("Is student1 < Student2?")
+    print(student1 < student2)
+
+    print("Is student1 >= Student2?")
+    print(student1 >= student2)
+
+    print("Is student2 < Student1?")
+    print(student2 < student1)
+
+    print("Is student1 >= Student2?")
+    print(student1 >= student2)
+
+    print("Is student2 < Student1?")
+    print(student2 < student1)
 
 if __name__ == "_main_":
     main()
