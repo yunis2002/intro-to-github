@@ -58,3 +58,28 @@ class Student(object):
             return False
         else:
             return self.name == other.name
+            
+//Alexa's Part
+
+def main():
+    """Tests sorting."""
+    # Create the list and put 5 students into it
+    lyst = []
+    for count in reversed(range(5)):
+        s = Student("Name" + str(count + 1), 10)
+        lyst.append(s)
+       
+    # Complete the definition of the main function
+    print("Sorted list of students:")
+    # Shuffle the list using the import statement random
+    random.shuffle(lyst)
+   
+    # Sort the list using the sort() method.
+    lyst.sort()
+
+    # Disply the student list data.
+    for obj in lyst:
+        print(obj.__str__())
+
+if name == "main":
+    main()
