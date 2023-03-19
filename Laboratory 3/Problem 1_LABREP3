@@ -28,47 +28,49 @@ class Student(object): #Dominic
         return f"Name: {self.name}\nScores: {' '.join(map(str, self.scores))}"
 
     def isEqual(self, other):
-        return self.name == other.name
+        if (self.scores == other.scores):
+            return f"True"
+        return f"False"
 
     def isLessThan(self, other):
-        return self.name < other.name
+        if (self.scores < other.scores):
+            return f"True"
+        return f"False"
 
     def isGOE(self, other):
-        return self.name >= other.name
+        if (self.scores >= other.scores):
+            return f"True"
+        return f"False"
 
 
 def main():
     student = Student("Ken", 5)
-    print(student)
+    print(f"Student #2: {student.getName()}")
     for i in range(1, 6):
         student.setScore(i, 100)
     print(student)
- for i in range(1, 6):
-        student1.setScore(i, 100)
-
+    
     student2 = Student("Ayan", 5)
     print(f"Student #2: {student2.getName()}")
-
-    for i in range(1, 6): #Torralba
+    for i in range(1, 6):
         student2.setScore(i, 100)
+    print(student2)
 
     print("Is student1 = Student2?")
-    print(student1 == student2)
+    print(student.isEqual(student2))
 
     print("Is student1 < Student2?")
-    print(student1 < student2)
+    print(student.isLessThan(student2))
 
     print("Is student1 >= Student2?")
-    print(student1 >= student2)
+    print(student.isGOE(student2))
 
     print("Is student2 < Student1?")
-    print(student2 < student1)
+    print(student2.isLessThan(student))
 
-    print("Is student1 >= Student2?")
-    print(student1 >= student2)
+    print("Is student2 >= Student1?")
+    print(student2.isGOE(student))
 
-    print("Is student2 < Student1?")
-    print(student2 < student1)
 
 if __name__ == "_main_":
     main()
