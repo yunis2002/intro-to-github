@@ -8,4 +8,15 @@
 # Each function should return 0 if the list is empty. 
 # Include a main function that tests the three statistical functions with a given list.
 
-
+MMM = input('Find the mean, mode or median. Type EXIT to stop: ') #Guevarra
+while MMM != "EXIT":
+    if MMM == "mode":
+        print("Finding mode...")
+        import mode
+    elif MMM == "median":
+        print("Finding median...")
+        import median
+    elif MMM == "mean":
+        print("Finding mean...")
+        import mean
+    MMM = input('Find the mean, mode or median. Type EXIT to stop: ')
