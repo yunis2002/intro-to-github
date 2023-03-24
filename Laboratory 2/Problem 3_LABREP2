@@ -35,3 +35,18 @@ def sentence():
 
 def nounPhrase():
     return random.choice(articles) + " " + random.choice(nouns)
+
+#Quennie Torralba's Part
+def verbPhrase():
+    return random.choice(verbs) + " " + nounPhrase() + " " + prepositionalPhrase()
+
+def prepositionalPhrase():
+    return random.choice(prepositions) + " " + nounPhrase()
+
+def main():
+    number = int(input('Enter number of sentences: '))
+    for count in range(number):
+        print(sentence())
+
+if _name__=='__main_':
+    main()
