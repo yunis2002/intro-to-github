@@ -5,3 +5,21 @@
 # If the input is 0, the program quits. 
 # Otherwise, the program prints the line associated with that number.
 
+
+inputFile = input('Enter the file name: ')
+fileList = list()
+
+with open(inputFile) as fLine:
+    for line in fLine:
+        fileList.append(line.strip())
+    fileLen = len(fileList)
+
+checker = True
+while checker:
+    print('Number of lines: ', fileLen)
+    lineNum = int(input('Please enter a line number (0 to exit): '))
+
+    if lineNum == 0:
+        checker = False
+    else:
+        print('Line ', str(lineNum), ': ', fileList[lineNum-1],'\n')
