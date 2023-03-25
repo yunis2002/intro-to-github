@@ -1,3 +1,28 @@
 # Convert the oxo‐logic.py module to reflect OOP design by creating a Game class. 
 
+import os
+import random
+import oxo_data
 
+
+class Game:
+#Guevarra
+    def __init__(self):
+        self.board = [" "]*9
+
+    def saveGame(self):
+        oxo_data.saveGame(self.board)
+
+    def restoreGame(self):
+        try:
+            game = oxo_data.restoreGame()
+            if len(game) == 9:
+                self.board = game
+            else:
+                self.board = [" "]*9
+        except IOError:
+            self.board = [" "]*9
+
+if _name_ == "main":
+    game = Game()
+    game.saveGame()
