@@ -20,3 +20,23 @@ window.title('File Explorer')
 window.geometry("800x150")
 window.config(background = "purple")
 
+label_file_explorer = Label(window,
+							text = "FILE EXPLORER",
+							width = 130, height = 4,
+							fg = "black")
+
+	
+button_explore = Button(window,
+						text = "Search",
+						command = browseFiles)
+
+button_exit = Button(window,
+					text = "Exit",
+					command = exit)
+
+
+label_file_explorer.grid(column = 1, row = 1)
+button_explore.grid(column = 1, row = 2)
+button_exit.grid(column = 1,row = 3)
+
+window.mainloop()
