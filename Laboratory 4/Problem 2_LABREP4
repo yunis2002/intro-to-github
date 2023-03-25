@@ -1,2 +1,22 @@
 # Explore the Tkinter.filedialog module to get the name of a text file 
 
+from tkinter import *
+
+# import filedialog module
+from tkinter import filedialog
+
+def browseFiles():
+	filename = filedialog.askopenfilename(initialdir = "/",
+										title = "Select a File",
+										filetypes = (("Text files",
+														"*.txt*"),
+													("all files",
+														"*.*")))
+	
+	label_file_explorer.configure(text="File Location: "+filename)	
+															
+window = Tk()
+window.title('File Explorer')
+window.geometry("800x150")
+window.config(background = "purple")
+
