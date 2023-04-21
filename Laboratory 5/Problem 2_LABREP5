@@ -4,3 +4,35 @@
 # a)    For each renter, list his or her number, first name, middle initial, last name, address, city, state, postal code, telephone number, and email address.
 # b)    For each property, list the condo location number, condo location name, address, city, state, postal code, condo unit number, square footage, number of bedrooms, number of bathrooms, maximum number of persons that can sleep in the unit, and the base weekly rate.
 # c)  	For each rental agreement, list the renter number, first name, middle initial, last name, address, city, state, postal code, telephone number, start date of the rental, end date of the rental, and the weekly rental amount. The rental period is one or more weeks.
+
+# Torralba's Part
+CREATE TABLE IF NOT EXISTS "Renters" (
+"Renter_Number" INTEGER,
+"First_Name" TEXT NOT NULL,
+"Middle_Initial" TEXT,
+"Last_Name" TEXT NOT NULL,
+"Address" TEXT NOT NULL,
+"City" TEXT NOT NULL,
+"State" TEXT NOT NULL,
+"Postal_Code" TEXT NOT NULL,
+"Telephone_No" TEXT NOT NULL,
+"Email_Addr" TEXT NOT NULL,
+PRIMARY KEY("Renter_Number")
+);
+
+CREATE TABLE IF NOT EXISTS "Properties" (
+"Condo_Location_ID" INTEGER,
+"Condo_Location_Name" TEXT NOT NULL,
+"Address" TEXT NOT NULL,
+"City" TEXT NOT NULL,
+"State" TEXT NOT NULL,
+"Postal_Code" TEXT NOT NULL,
+"Unit_Number" INTEGER NOT NULL,
+"Square_Footage" REAL NOT NULL,
+"Bedrooms" INTEGER NOT NULL,
+"Bathrooms" INTEGER NOT NULL,
+"Max_Occupancy" INTEGER NOT NULL,
+"Base_Weekly_Rate" REAL NOT NULL,
+PRIMARY KEY("Condo_Location_ID")
+);
+
