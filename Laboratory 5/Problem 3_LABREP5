@@ -1,7 +1,75 @@
 # Use SQLite commands to complete the following exercises.
 # a)  Create a table named ADVENTURE_TRIP. The table has the same structure as the TRIP table shown in Figure 3-2 below except the TRIP_NAME column should use the VARCHAR data type and the DISTANCE and MAX_GRP_SIZE columns should use the NUMBER data type. Execute the command to describe the layout and characteristics of the ADVENTURE_TRIP table.
+
+CREATE TABLE ADVENTURE_TRIP (
+    TRIP_ID INTEGER PRIMARY KEY,
+    TRIP_NAME CHAR(50),
+    START_LOCATION CHAR(50),
+    STATE CHAR(2),
+    DISTANCE INTEGER,
+    MAX_GRP_SIZE INTEGER,
+    TRIP_TYPE CHAR(20),
+    SEASON CHAR(10)
+);
+
 # b)  Add the following row to the ADVENTURE_TRIP table: trip ID: 45; trip name: Jay Peak; start location: Jay; state: VT; distance: 8; maximum group size: 8; type: Hiking and sea- son: Summer. Display the contents of the ADVENTURE_TRIP table.
+
+INSERT INTO ADVENTURE_TRIP (TRIP_ID, TRIP_NAME, START_LOCATION, STATE, DISTANCE, MAX_GRP_SIZE, TRIP_TYPE, SEASON)
+VALUES (45, 'Jay Peak', 'Jay', 'VT', 8, 8, 'Hiking', 'Summer');
+
+SELECT TRIP_ID, TRIP_NAME, START_LOCATION, STATE, DISTANCE, MAX_GRP_SIZE, TRIP_TYPE, SEASON FROM ADVENTURE_TRIP
+
 # c) 	Delete the ADVENTURE_TRIP table.
+
+DROP TABLE ADVENTURE_TRIP
+
 # d)  Open the script file (SQLServerColonial.sql) to create the six tables and add records to the tables. Revise the script file so that it can be run in the DB Browser.
+
+CREATE TABLE GUIDE
+(GUIDE_NUM CHAR(4) PRIMARY KEY,
+LAST_NAME CHAR(15),
+FIRST_NAME CHAR(15),
+ADDRESS CHAR(25),
+CITY CHAR(25),
+STATE CHAR(2),
+POSTAL_CODE CHAR(5),
+PHONE_NUM CHAR(12),
+HIRE_DATE DATE );
+
+CREATE TABLE CUSTOMER
+(CUSTOMER_NUM CHAR(4) PRIMARY KEY,
+LAST_NAME CHAR(30) NOT NULL,
+FIRST_NAME CHAR (30),
+ADDRESS CHAR(35),
+CITY CHAR(35),
+STATE CHAR(2),
+POSTAL_CODE CHAR(5),
+PHONE CHAR(12) );
+
+CREATE TABLE RESERVATION
+(RESERVATION_ID CHAR(7) PRIMARY KEY,
+TRIP_ID DECIMAL(3,0),
+TRIP_DATE DATE,
+NUM_PERSONS DECIMAL(3,0),
+TRIP_PRICE DECIMAL(6,2),
+OTHER_FEES DECIMAL(6,2),
+CUSTOMER_NUM CHAR(4) );
+
+CREATE TABLE TRIP
+(TRIP_ID DECIMAL(3,0) PRIMARY KEY,
+TRIP_NAME CHAR(75),
+START_LOCATION CHAR(50),
+STATE CHAR(2),
+DISTANCE DECIMAL(4,0),
+MAX_GRP_SIZE DECIMAL(4,0),
+TYPE CHAR(20),
+SEASON CHAR(20) );
+
+CREATE TABLE TRIP_GUIDES
+(TRIP_ID DECIMAL(3,0),
+GUIDE_NUM CHAR(4),
+PRIMARY KEY (TRIP_ID, GUIDE_NUM) );
+#-------------DOMINIC---------------
+
 # e)  Confirm that you have created the tables correctly by describing each table and comparing the results to the figures shown below. Confirm that you have added all data correctly by viewing the data in each table and comparing the results to Figures 1-4 through 1-8 shown below.
 
