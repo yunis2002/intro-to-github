@@ -12,3 +12,43 @@
 # c)  	For each participant, list his or her number, last name, first name, and the class number, class description, and date of the class for each class in which the participant is enrolled.
 # d)     For each class, list the class date, class number, and class description; and the number, last name, and first name of each participant in the class.
 
+BEGIN TRANSACTION;
+CREATE TABLE "Adventure Class" (
+	"ClassNumber"	INTEGER NOT NULL,
+	"ClassDescription"	TEXT NOT NULL,
+	"MaxNumOfParticipants"	INTEGER NOT NULL,
+	"InstructorId"	INTEGER NOT NULL,
+	"ClassFee"	NUMERIC NOT NULL,
+	PRIMARY KEY("InstructorId","ClassNumber")
+);
+CREATE TABLE "Class" (
+	"ClassDate"	INTEGER NOT NULL,
+	"ClassNumber"	INTEGER NOT NULL,
+	"ClassDescription"	TEXT NOT NULL,
+	"ParticipantNumber"	INTEGER NOT NULL,
+	"LastName"	TEXT NOT NULL,
+	"FirstName"	TEXT NOT NULL,
+	PRIMARY KEY("ClassNumber","ParticipantNumber")
+);
+CREATE TABLE "Enrolled Participants" (
+	"ParticipantNumber"	INTEGER NOT NULL,
+	"LastName"	TEXT NOT NULL,
+	"FirstName"	TEXT NOT NULL,
+	"ClassNumber"	INTEGER NOT NULL,
+	"ClassDescription"	TEXT NOT NULL,
+	"DateOfClass"	INTEGER NOT NULL,
+	PRIMARY KEY("ParticipantNumber","ClassNumber")
+);
+CREATE TABLE "Participants" (
+	"ParticipantsNumber"	INTEGER NOT NULL,
+	"LastName"	TEXT NOT NULL,
+	"FirstName"	TEXT NOT NULL,
+	"Address"	TEXT NOT NULL,
+	"City"	TEXT NOT NULL,
+	"State"	TEXT NOT NULL,
+	"PostalCode"	TEXT NOT NULL,
+	"Telephone"	TEXT NOT NULL,
+	"BirthDate"	INTEGER NOT NULL,
+	PRIMARY KEY("ParticipantsNumber")
+);
+COMMIT;
