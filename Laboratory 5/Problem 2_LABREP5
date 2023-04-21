@@ -36,3 +36,26 @@ CREATE TABLE IF NOT EXISTS "Properties" (
 PRIMARY KEY("Condo_Location_ID")
 );
 
+#Galang
+
+CREATE TABLE IF NOT EXISTS "Rental_Agreements" (
+"Agreement_ID" INTEGER,
+"Renter_Number" INTEGER NOT NULL,
+"First_Name" TEXT NOT NULL,
+"Middle_Initial" TEXT,
+"Last_Name" TEXT NOT NULL,
+"Address" TEXT NOT NULL,
+"City" TEXT NOT NULL,
+"State" TEXT NOT NULL,
+"Postal_Code" TEXT NOT NULL,
+"Telephone_No" TEXT NOT NULL,
+"Start_Date" TEXT NOT NULL,
+"End_Date" TEXT NOT NULL,
+"Weekly_Rental_Amt" REAL NOT NULL,
+"Condo_Location_ID" INTEGER NOT NULL,
+PRIMARY KEY("Agreement_ID"),
+FOREIGN KEY("Renter_Number") REFERENCES "Renters"("Renter_Number"),
+FOREIGN KEY("Condo_Location_ID") REFERENCES "Properties"("Condo_Location_ID")
+);
+
+COMMIT;
